@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>音源分离demo</h1>
+    <form enctype='multipart/form-data' method='POST'>
+
+        <!-- <h2>选择模型</h2>
+        <input type="radio" name="model" value="G2_D2">G2_D2<br>
+        <input type="radio" name="model" value="G2_D1">G2_D1<br>
+        <input type="radio" name="model" value="G1_D1">G1_D1<br>
+        <input type="radio" name="model" value="G1_D2">G1_D2<br>
+        <input type="radio" name="model" value="U-Net">U-Net<br> -->
+        <!-- <input type="submit" value="上传"> -->
+
+    <!-- </form>
+    <form action="" enctype='multipart/form-data' method='POST'> -->
+        <h2>上传需要分离的音频文件</h2>
+        <input type="file" name="file"><br>
+        <input type="submit" value="上传">
+    </form>
+    <audio src="{{ url_for('static', filename='audio/bass.wav') }}" controls="controls"></audio>bass<br>
+    <audio src="{{ url_for('static', filename='audio/drums.wav') }}" controls="controls"></audio>drums<br>
+    <audio src="{{ url_for('static', filename='audio/other.wav') }}" controls="controls"></audio>other<br>
+    <audio src="{{ url_for('static', filename='audio/vocals.wav') }}" controls="controls"></audio>vocals<br>
+    <audio src="{{ url_for('static', filename='audio/accompaniment.wav') }}" controls="controls"></audio>accompaniment<br>
+</body>
+</html>
+
