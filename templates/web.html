@@ -8,20 +8,20 @@
     <h1>音源分离demo</h1>
     <form enctype='multipart/form-data' method='POST'>
 
-        <!-- <h2>选择模型</h2>
-        <input type="radio" name="model" value="G2_D2">G2_D2<br>
-        <input type="radio" name="model" value="G2_D1">G2_D1<br>
-        <input type="radio" name="model" value="G1_D1">G1_D1<br>
-        <input type="radio" name="model" value="G1_D2">G1_D2<br>
-        <input type="radio" name="model" value="U-Net">U-Net<br> -->
-        <!-- <input type="submit" value="上传"> -->
-
-    <!-- </form>
-    <form action="" enctype='multipart/form-data' method='POST'> -->
-        <h2>上传需要分离的音频文件</h2>
+        <h3>上传需要分离的音频文件</h3>
         <input type="file" name="file"><br>
-        <input type="submit" value="上传">
+        
+        <h3>选择模型</h3>
+        <input type="radio" name="model" value="unet">U-Net<br>
+        <input type="radio" name="model" value="mmdensenet">MMDenseNet<br>
+
+        <h3>选择Mask</h3>
+        <input type="radio" name="mask" value="hard">hard<br>
+        <input type="radio" name="mask" value="soft">soft<br>
+
+        <input type="submit" value="分离">
     </form>
+    <audio src="{{ url_for('static', filename='audio/mixture.wav') }}" controls="controls"></audio>mixture<br>
     <audio src="{{ url_for('static', filename='audio/bass.wav') }}" controls="controls"></audio>bass<br>
     <audio src="{{ url_for('static', filename='audio/drums.wav') }}" controls="controls"></audio>drums<br>
     <audio src="{{ url_for('static', filename='audio/other.wav') }}" controls="controls"></audio>other<br>

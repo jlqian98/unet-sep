@@ -6,6 +6,7 @@ import tensorflow as tf
 def create_hparams(hparams_string=None, verbose=False):
     """Create model hyperparameters. Parse nondefault from given string."""
 
+
     hparams = tf.contrib.training.HParams(
         ################################
         # input Parameters        #
@@ -16,7 +17,7 @@ def create_hparams(hparams_string=None, verbose=False):
         fft_size = 1022,
         patch_length= 256, 
         training_rate = 0.9,
-        insts = ['drums', 'bass', 'other', 'vocals', 'accompaniment'],
+        insts = ['drums', 'bass', 'other', 'vocals'],
         hard_mask = True, 
         extract = True,
 
@@ -36,7 +37,7 @@ def create_hparams(hparams_string=None, verbose=False):
         save_iter = 20,
         sdr_iter = 50,
         patience = 100,
-        device='cpu',      
+        device='cuda',      
 
         ################################
         # Dataset        #
